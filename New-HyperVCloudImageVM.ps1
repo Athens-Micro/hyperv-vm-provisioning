@@ -208,6 +208,23 @@ Switch ($ImageVersion) {
     $ImageHashFileName = "SHA256SUMS"
     $ImageManifestSuffix = "manifest"
   }
+  "24.04" {
+    $_ = "noble"
+    $ImageVersion = "24.04"
+  }
+  "noble" {
+    $ImageOS = "ubuntu"
+    $ImageVersionName = "noble"
+    $ImageVersion = "24.04"
+    $ImageRelease = "current" # default option is get latest but could be fixed to some specific version for example "release-20210413"
+    $ImageBaseUrl = "http://cloud-images.ubuntu.com" # alternative https://mirror.scaleuptech.com/ubuntu-cloud-images/releases
+    $ImageUrlRoot = "$ImageBaseUrl/$ImageVersionName/$ImageRelease/" # latest
+    $ImageFileName = "$ImageVersionName-server-cloudimg-amd64"
+    $ImageFileExtension = "img"
+    # Manifest file is used for version check based on last modified HTTP header
+    $ImageHashFileName = "SHA256SUMS"
+    $ImageManifestSuffix = "manifest"
+  }
   "22.04-azure" {
     $_ = "jammy-azure"
     $ImageVersion = "22.04-azure"
